@@ -59,13 +59,13 @@ class Configuration {
     
     public function DataBase(){
         
-        if(file_exists("app.config/database.ini")){
-            $config = parse_ini_file("app.config/database.ini");
+        if(file_exists("../app.config/database.ini")){
+            $config = parse_ini_file("../app.config/database.ini");
         }else{
             throw new Exception("O arquivo de configuração do banco de dados não foi encontrado.");
         }
         
-        $this->setDataHost(isset($config['host']) ? $config['user'] : NULL);
+        $this->setDataHost(isset($config['host']) ? $config['host'] : NULL);
         $this->setDataBase(isset($config['base']) ? $config['base'] : NULL);
         $this->setDataUser(isset($config['user']) ? $config['user'] : NULL);
         $this->setDataPass(isset($config['pass']) ? $config['pass'] : NULL);
